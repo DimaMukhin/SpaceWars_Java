@@ -10,7 +10,7 @@ import com.jogamp.opengl.awt.*;
 public class A3Q1Skeleton implements GLEventListener, MouseListener, MouseMotionListener {
 	public static final boolean TRACE = false;
 
-	public static final String WINDOW_TITLE = "A3Q1: [your name here]";
+	public static final String WINDOW_TITLE = "Space wars";
 	public static final int INITIAL_WIDTH = 640;
 	public static final int INITIAL_HEIGHT = 480;
 
