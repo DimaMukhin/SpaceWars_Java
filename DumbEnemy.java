@@ -6,7 +6,7 @@ public class DumbEnemy extends GameObject{
 	
 	private final static float width = 50, height = 50;
 	private float r, g, b;
-	private final int min = 0, max = 3;
+	private final int min = -3, max = 3;
 	
 	public DumbEnemy(float wx, float wy) {
 		
