@@ -114,6 +114,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
 
 		// TODO: Update the world, and draw it
+		//test
 		handler.draw(gl);
 	}
 	
