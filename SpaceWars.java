@@ -83,8 +83,12 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		handler = new ObjectHandler(player1);
 		
 		handler.add(new DumbEnemy(100, 100));
+<<<<<<< HEAD
 		handler.add(new SmartEnemy(200, 200));
 		handler.add(new Bullet(player1));
+=======
+		handler.add(new SmartEnemy(200, 200, player1));
+>>>>>>> origin/master
 	}
 
 	@Override
@@ -105,8 +109,9 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	public void display(GLAutoDrawable drawable) {
 		long delta = 0;
 		long now = System.nanoTime();
-		if (time != 0 && now - time < 100000000)
+		if (time != 0 && now - time < 100000000) {
 			delta = now - time;
+		}
 		time = now;
 
 		// Draws the display

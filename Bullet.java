@@ -11,7 +11,7 @@ public class Bullet extends GameObject{
 	private final static float width = 3;
 	private float angle;
 
-	
+	//..
 	public Bullet(Player player1) {
 		super(player1.wx,player1.wy + player1.height/2+ height/2,width,height);
 		this.player1 = player1;

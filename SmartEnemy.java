@@ -7,10 +7,11 @@ public class SmartEnemy extends GameObject{
 	private final static float width = 50, height = 50;
 	private float r, g, b;
 	private final int min = -3, max = 3;
+	private Player p1; 
 	
-	public SmartEnemy(float wx, float wy) {
-		
+	public SmartEnemy(float wx, float wy, Player p1) {
 		super(wx, wy, width, height);
+		this.p1 = p1;
 		r = (float) Math.random();
 		g = (float) Math.random();
 		b = (float) Math.random();
@@ -37,8 +38,17 @@ public class SmartEnemy extends GameObject{
 
 	
 	public void update() {
-		wx += vx;
-		wy += vy;
+		super.update();
+		float dx = p1.wx - wx;
+		float dy = p1.wy - wy;
+		
+		float dist = (float) Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
+		
+		vx  = 1/dist * dx * 0.01f;
+		vy  = 1/dist * dy * 0.01f;
+		
+		wx += dx;
+		wy += dy;
 	}
 
 	
