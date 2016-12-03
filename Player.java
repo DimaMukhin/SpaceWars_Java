@@ -14,6 +14,12 @@ public class Player extends GameObject{
 		red = (float)Math.random();
 		green = (float)Math.random();
 		blue = (float)Math.random();
+		do
+		{
+			red = (float)Math.random();
+			green = (float)Math.random();
+			blue = (float)Math.random();
+		}while(red <= 0.3f && green <= 0.3f && blue <=0.3f);
 	}
 	
 	public void draw(GL2 gl)
@@ -30,7 +36,6 @@ public class Player extends GameObject{
 	@Override
 	public void update() {
 		wx += vx;
-		wy += vy;
-		
+		wy += vy;	
 	}
 }
