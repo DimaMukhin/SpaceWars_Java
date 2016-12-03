@@ -2,7 +2,7 @@ import com.jogamp.opengl.GL2;
 
 public class DumbEnemy extends GameObject{
 	
-	private final static float width = 70, height = 70;
+	private final static float width = 50, height = 50;
 	private float r, g, b;
 	public DumbEnemy(float wx, float wy) {
 		super(wx, wy, width, height);
