@@ -211,8 +211,8 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyChar() == 'w') {
 			player1.vy = 3;
-		} else if (e.getKeyChar() == 'w') {
-			
+		} else if (e.getKeyChar() == 'd') {
+			player1.angle += 0.5f;
 		}
 	}
 
