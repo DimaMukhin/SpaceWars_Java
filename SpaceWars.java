@@ -66,6 +66,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	ObjectHandler handler;
 	Player player1;
 	
+	
 	public void setup(final GLCanvas canvas) {
 		// Called for one-time setup
 		if (TRACE)
@@ -77,12 +78,13 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 			}
 		}, 1000, 1000/60);
 
-		// TODO: Add code here\
+		// TODO: Add code here
 		player1 = new Player(INITIAL_WIDTH / 2.0f, INITIAL_HEIGHT / 2.0f);
 		handler = new ObjectHandler(player1);
 		
 		handler.add(new DumbEnemy(100, 100));
-		//handler.add(new SmartEnemy(200, 200));a
+		handler.add(new SmartEnemy(200, 200));
+		handler.add(new Bullet(player1));
 	}
 
 	@Override
