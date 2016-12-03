@@ -77,9 +77,9 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 			}
 		}, 1000, 1000/60);
 
-		// TODO: Add code here
-		handler = new ObjectHandler();
+		// TODO: Add code here\
 		player1 = new Player(50, 50);
+		handler = new ObjectHandler(player1);
 		
 		handler.add(player1);
 		handler.add(new DumbEnemy(100, 100));
