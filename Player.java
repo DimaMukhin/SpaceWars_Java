@@ -8,7 +8,7 @@ public class Player extends GameObject{
 	private float red;
 	private float green;
 	private float blue;
-	private float angle;
+	public float angle;
 	
 	public Player(float wx, float wy) {
 		super(wx,wy,50,50);
