@@ -44,8 +44,8 @@ public class SmartEnemy extends GameObject{
 		
 		float dist = (float) Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
 		
-		vx  = 1/dist * dx * 0.01f;
-		vy  = 1/dist * dy * 0.01f;
+		vx  = 1/dist * dx * 0.6f;
+		vy  = 1/dist * dy * 0.6f;
 		
 		wx += vx;
 		wy += vy;
