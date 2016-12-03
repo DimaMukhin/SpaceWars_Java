@@ -7,7 +7,7 @@ import java.util.TimerTask;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.*;
 
-public class SpaceWars implements GLEventListener, MouseListener, MouseMotionListener {
+public class SpaceWars implements GLEventListener, MouseListener, MouseMotionListener, KeyListener {
 	public static final boolean TRACE = false;
 
 	public static final String WINDOW_TITLE = "Space wars";
@@ -35,6 +35,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 			canvas.addGLEventListener((GLEventListener)self);
 			canvas.addMouseListener((MouseListener)self);
 			canvas.addMouseMotionListener((MouseMotionListener)self);
+			canvas.addKeyListener((KeyListener)self);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(1);
@@ -117,6 +118,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		// TODO: Update the world, and draw it
 		//test
 		handler.draw(gl);
+		handler.update();
 	}
 	
 	public float lerp(float t, float a, float b) {
@@ -202,6 +204,26 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+	}
+	
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if (e.getKeyChar() == 'w') {
+			player1.vy = 3;
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		if (e.getKeyChar() == 'w') {
+			player1.vy = 0;
+		}
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+	// TODO Auto-generated method stub
+		
 	}
 
 }
