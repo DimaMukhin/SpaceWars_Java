@@ -11,9 +11,6 @@ public class Player extends GameObject{
 	
 	public Player(float wx, float wy) {
 		super(wx,wy,15,15);
-		red = (float)Math.random();
-		green = (float)Math.random();
-		blue = (float)Math.random();
 		do
 		{
 			red = (float)Math.random();
