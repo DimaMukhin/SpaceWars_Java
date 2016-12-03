@@ -26,4 +26,11 @@ public class Player extends GameObject{
 		gl.glEnd();
 		
 	}
+
+	@Override
+	public void update() {
+		wx += vx;
+		wy += vy;
+		
+	}
 }
