@@ -10,7 +10,7 @@ public class Player extends GameObject{
 	private float blue;
 	
 	public Player(float wx, float wy) {
-		super(wx,wy,30,30);
+		super(wx,wy,80,80);
 		do
 		{
 			red = (float)Math.random();
