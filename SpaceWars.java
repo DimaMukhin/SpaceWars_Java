@@ -214,6 +214,8 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 			player1.vx = (float) Math.sin(Math.toRadians(-player1.angle)) * 2;
 		} else if (e.getKeyChar() == 'd') {
 			player1.va = -2f;
+		}else if (e.getKeyChar() == 'a') {
+			player1.va = 2f;
 		}
 	}
 
@@ -223,6 +225,8 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 			player1.vy = 0;
 			player1.vx = 0;
 		} else if (e.getKeyChar() == 'd') {
+			player1.va = 0;
+		} else if (e.getKeyChar() == 'a') {
 			player1.va = 0;
 		}
 	}
