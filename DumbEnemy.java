@@ -13,10 +13,9 @@ public class DumbEnemy extends GameObject{
 		gl.glColor3f(0, 1, 0);
 		gl.glBegin(GL2.GL_POLYGON);
 		gl.glVertex2f(wx-width/2,wy-height/2);
-		gl.glVertex2f(wx-width/2,wy-height/2);
+		gl.glVertex2f(wx+width/2,wy-height/2);
 		gl.glVertex2f(wx-width/2,wy+height/2);
-		gl.glVertex2f(wx-width/2,wy+height/2);
-		gl.glEnd();
+		gl.glVertex2f(wx+width/2,wy+height/2);
 		gl.glEnd();
 	}
 
