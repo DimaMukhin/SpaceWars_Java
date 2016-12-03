@@ -116,6 +116,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
 
 		// TODO: Update the world, and draw it
+		gl.glLoadIdentity();
 		//test
 		handler.draw(gl);
 		handler.update();
@@ -210,6 +211,8 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyChar() == 'w') {
 			player1.vy = 3;
+		} else if (e.getKeyChar() == 'w') {
+			
 		}
 	}
 
@@ -217,6 +220,8 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	public void keyReleased(KeyEvent e) {
 		if (e.getKeyChar() == 'w') {
 			player1.vy = 0;
+		} else if (e.getKeyChar() == 'w') {
+			
 		}
 	}
 
