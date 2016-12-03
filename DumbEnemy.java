@@ -32,6 +32,7 @@ public class DumbEnemy extends GameObject{
 
 	
 	public void update() {
+		super.update();
 		wx += vx;
 		wy += vy;
 	}

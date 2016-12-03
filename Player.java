@@ -40,6 +40,7 @@ public class Player extends GameObject{
 
 	@Override
 	public void update() {
+		super.update();
 		wx += vx;
 		wy += vy;
 		angle += va;
