@@ -62,6 +62,8 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	long time = 0;
 
 	// TODO: add what you need
+	ObjectHandler handler;
+	Player player1;
 	
 	public void setup(final GLCanvas canvas) {
 		// Called for one-time setup
@@ -75,6 +77,10 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		}, 1000, 1000/60);
 
 		// TODO: Add code here
+		handler = new ObjectHandler();
+		player1 = new Player(50, 50);
+		
+		handler.add(player1);
 	}
 
 	@Override
@@ -108,6 +114,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		gl.glClear(GL2.GL_COLOR_BUFFER_BIT | GL2.GL_DEPTH_BUFFER_BIT);
 
 		// TODO: Update the world, and draw it
+		handler.draw(gl);
 	}
 	
 	public float lerp(float t, float a, float b) {
