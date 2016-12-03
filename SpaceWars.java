@@ -103,8 +103,9 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	public void display(GLAutoDrawable drawable) {
 		long delta = 0;
 		long now = System.nanoTime();
-		if (time != 0 && now - time < 100000000)
+		if (time != 0 && now - time < 100000000) {
 			delta = now - time;
+		}
 		time = now;
 
 		// Draws the display
