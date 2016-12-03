@@ -39,13 +39,16 @@ public class SmartEnemy extends GameObject{
 	
 	public void update() {
 		super.update();
-		wx += p1.wx - wx;
-		wy += p1.wy - wy;
+		float dx = p1.wx - wx;
+		float dy = p1.wy - wy;
 		
-		float dist = (float) Math.sqrt(Math.pow(wx, 2) + Math.pow(wy, 2));
+		float dist = (float) Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
 		
-		vx  = 1/dist * wx * 0.01f;
-		vy  = 1/dist * wy * 0.01f;
+		vx  = 1/dist * dx * 0.01f;
+		vy  = 1/dist * dy * 0.01f;
+		
+		wx += dx;
+		wy += dy;
 	}
 
 	
