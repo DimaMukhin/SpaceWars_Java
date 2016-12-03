@@ -82,7 +82,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		handler = new ObjectHandler(player1);
 		
 		handler.add(new DumbEnemy(100, 100));
-		//handler.add(new SmartEnemy(200, 200));
+		//handler.add(new SmartEnemy(200, 200));a
 	}
 
 	@Override
@@ -153,7 +153,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 //		bottom = ar > 1 ? -1.0f : -1/ar;
 //		top = ar > 1 ? 1.0f : 1/ar;
 //		gl.glOrthof(left, right, bottom, top, -1.0f, 1.0f);
-		gl.glOrthof(0, width/2, 0, height/2, 0.0f, 1.0f);
+		gl.glOrthof(0, width, 0, height, 0.0f, 1.0f);
 		gl.glMatrixMode(GL2.GL_MODELVIEW);
 		gl.glLoadIdentity();
 	}
