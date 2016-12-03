@@ -8,9 +8,10 @@ public class Player extends GameObject{
 	private float red;
 	private float green;
 	private float blue;
+	private float angle;
 	
 	public Player(float wx, float wy) {
-		super(wx,wy,80,80);
+		super(wx,wy,50,50);
 		do
 		{
 			red = (float)Math.random();
@@ -24,6 +25,8 @@ public class Player extends GameObject{
 	
 	public void draw(GL2 gl)
 	{
+		gl.glLoadIdentity();
+		gl.glRotated(angle, 0, 0, 1f);
 		gl.glBegin(GL2.GL_TRIANGLES);
 		gl.glColor3f(red, green, blue);
 		gl.glVertex2f(wx-height/2,wy-height/2);
