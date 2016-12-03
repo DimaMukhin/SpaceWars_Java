@@ -25,7 +25,7 @@ public class Player extends GameObject{
 	
 	public void draw(GL2 gl)
 	{
-		gl.glLoadIdentity();
+		gl.glPushMatrix();
 		gl.glRotated(angle, 0, 0, 1f);
 		gl.glBegin(GL2.GL_TRIANGLES);
 		gl.glColor3f(red, green, blue);
@@ -33,6 +33,7 @@ public class Player extends GameObject{
 		gl.glVertex2f(wx+height/2,wy-height/2);
 		gl.glVertex2f(wx,wy+height/2);
 		gl.glEnd();
+		gl.glPopMatrix();
 		
 	}
 
