@@ -11,12 +11,15 @@ public class Player extends GameObject{
 	
 	public Player(float wx, float wy) {
 		super(wx,wy,15,15);
-		do
-		{
-			red = (float)Math.random();
-			green = (float)Math.random();
-			blue = (float)Math.random();
-		}while(red <= 0.3f && green <= 0.3f && blue <=0.3f);
+//		do
+//		{
+//			red = (float)Math.random();
+//			green = (float)Math.random();
+//			blue = (float)Math.random();
+//		}while(red <= 0.3f && green <= 0.3f && blue <=0.3f);
+		red = 0.059f;
+		green = 1;
+		blue = 1;
 	}
 	
 	public void draw(GL2 gl)
