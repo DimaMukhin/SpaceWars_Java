@@ -8,6 +8,7 @@ public class Player extends GameObject{
 	private float red;
 	private float green;
 	private float blue;
+	public float va;
 	public float angle;
 	
 	public Player(float wx, float wy) {
@@ -40,6 +41,7 @@ public class Player extends GameObject{
 	@Override
 	public void update() {
 		wx += vx;
-		wy += vy;	
+		wy += vy;
+		angle += va;
 	}
 }

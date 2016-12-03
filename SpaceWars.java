@@ -210,9 +210,10 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyChar() == 'w') {
-			player1.vy = 3;
+			player1.vy = (float) Math.cos(Math.toRadians(-player1.angle)) * 2;
+			player1.vx = (float) Math.sin(Math.toRadians(-player1.angle)) * 2;
 		} else if (e.getKeyChar() == 'd') {
-			player1.angle += 0.5f;
+			player1.va = -2f;
 		}
 	}
 
@@ -220,8 +221,9 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	public void keyReleased(KeyEvent e) {
 		if (e.getKeyChar() == 'w') {
 			player1.vy = 0;
-		} else if (e.getKeyChar() == 'w') {
-			
+			player1.vx = 0;
+		} else if (e.getKeyChar() == 'd') {
+			player1.va = 0;
 		}
 	}
 
