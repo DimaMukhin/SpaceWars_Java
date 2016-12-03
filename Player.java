@@ -12,7 +12,7 @@ public class Player extends GameObject{
 	public float angle;
 	
 	public Player(float wx, float wy) {
-		super(wx,wy,50,50);
+		super(wx,wy,30,50);
 		do
 		{
 			red = (float)Math.random();
@@ -30,8 +30,8 @@ public class Player extends GameObject{
 		gl.glTranslatef(-wx,-wy,0);
 		gl.glBegin(GL2.GL_TRIANGLES);
 		gl.glColor3f(red, green, blue);
-		gl.glVertex2f(wx-height/2,wy-height/2);
-		gl.glVertex2f(wx+height/2,wy-height/2);
+		gl.glVertex2f(wx-width/2,wy-height/2);
+		gl.glVertex2f(wx+width/2,wy-height/2);
 		gl.glVertex2f(wx,wy+height/2);
 		gl.glEnd();
 		gl.glPopMatrix();
