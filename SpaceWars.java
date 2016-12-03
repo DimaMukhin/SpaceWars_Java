@@ -83,12 +83,8 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		handler = new ObjectHandler(player1);
 		
 		handler.add(new DumbEnemy(100, 100));
-<<<<<<< HEAD
-		handler.add(new SmartEnemy(200, 200));
+		//handler.add(new SmartEnemy(200, 200));
 		handler.add(new Bullet(player1));
-=======
-		handler.add(new SmartEnemy(200, 200, player1));
->>>>>>> origin/master
 	}
 
 	@Override
@@ -241,7 +237,9 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	@Override
 	public void keyTyped(KeyEvent e) {
 	// TODO Auto-generated method stub
-		
+		if (e.getKeyChar() == 's') {
+			handler.add(new Bullet(player1));
+		}
 	}
 
 }
