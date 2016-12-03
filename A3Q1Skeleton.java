@@ -7,7 +7,7 @@ import java.util.TimerTask;
 import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.*;
 
-public class A3Q1Skeleton implements GLEventListener, MouseListener, MouseMotionListener {
+public class SpaceWars implements GLEventListener, MouseListener, MouseMotionListener {
 	public static final boolean TRACE = false;
 
 	public static final String WINDOW_TITLE = "Space wars";
