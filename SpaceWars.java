@@ -213,9 +213,13 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		if (e.getKeyChar() == 'w') {
 			player1.vy = (float) Math.cos(Math.toRadians(-player1.angle)) * 2;
 			player1.vx = (float) Math.sin(Math.toRadians(-player1.angle)) * 2;
-		} else if (e.getKeyChar() == 'd') {
+		}
+		
+		if (e.getKeyChar() == 'd') {
 			player1.va = -2f;
-		}else if (e.getKeyChar() == 'a') {
+		}
+		
+		if (e.getKeyChar() == 'a') {
 			player1.va = 2f;
 		}
 	}
@@ -225,9 +229,11 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		if (e.getKeyChar() == 'w') {
 			player1.vy = 0;
 			player1.vx = 0;
-		} else if (e.getKeyChar() == 'd') {
+		}
+		if (e.getKeyChar() == 'd') {
 			player1.va = 0;
-		} else if (e.getKeyChar() == 'a') {
+		}
+		if (e.getKeyChar() == 'a') {
 			player1.va = 0;
 		}
 	}
@@ -235,7 +241,9 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	@Override
 	public void keyTyped(KeyEvent e) {
 	// TODO Auto-generated method stub
-		
+		if (e.getKeyChar() == 's') {
+			handler.add(new Bullet(player1));
+		}
 	}
 
 }
