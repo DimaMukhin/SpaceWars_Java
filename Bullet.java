@@ -5,18 +5,19 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.awt.*;
 
 public class Bullet extends GameObject{
-	public float va;
-	private Player player1;
+	private Player player;
+	private Player enemy;
 	private final static float height = 15;
 	private final static float width = 3;
 	private float angle;
 
 	//....
 	//..
-	public Bullet(Player player1) {
-		super(player1.wx,player1.wy,width,height);
-		this.player1 = player1;
-		this.angle = player1.angle;
+	public Bullet(Player player, Player enemy) {
+		super(player.wx,player.wy,width,height);
+		this.player = player;
+		this.enemy = enemy;
+		this.angle = player.angle;
 		vx = (float)Math.sin(Math.toRadians(-angle));
 		vy = (float)Math.cos(Math.toRadians(-angle));
 		
@@ -45,5 +46,10 @@ public class Bullet extends GameObject{
 		super.update();
 		wx += vx;
 		wy += vy;
+		
+		// hit test
+		if (hitbox.intersects(enemy.hitbox)) {
+			System.out.println("daed!");
+		}
 	}
 }

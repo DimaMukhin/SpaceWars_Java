@@ -65,6 +65,7 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	// TODO: add what you need
 	ObjectHandler handler;
 	Player player1;
+	Player player2;
 	
 	
 	public void setup(final GLCanvas canvas) {
@@ -79,12 +80,14 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 		}, 1000, 1000/60);
 
 		// TODO: Add code here
-		player1 = new Player(INITIAL_WIDTH / 2.0f, INITIAL_HEIGHT / 2.0f);
-		handler = new ObjectHandler(player1);
+		GameState.state = GameState.GAME;
 		
-		handler.add(new DumbEnemy(100, 100));
-		handler.add(new SmartEnemy(200, 200, player1));
-		handler.add(new Bullet(player1));
+		player1 = new Player(INITIAL_WIDTH / 4.0f * 3, INITIAL_HEIGHT / 2.0f);
+		player2 = new Player(INITIAL_WIDTH / 4.0f, INITIAL_HEIGHT / 2.0f);
+		handler = new ObjectHandler(player1, player2);
+		
+		handler.add(new SmartEnemy(INITIAL_WIDTH / 2.0f, INITIAL_HEIGHT / 2.0f, player1));
+		handler.add(new SmartEnemy(INITIAL_WIDTH / 2.0f, INITIAL_HEIGHT / 2.0f, player2));
 	}
 
 	@Override
@@ -120,9 +123,16 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 
 		// TODO: Update the world, and draw it
 		gl.glLoadIdentity();
-		//test
-		handler.draw(gl);
-		handler.update();
+		
+		if (GameState.state == GameState.MENU) {
+			Menu.draw(gl);
+			Menu.update();
+		} else if (GameState.state == GameState.GAME) {
+			handler.draw(gl);
+			handler.update();
+		} else if (GameState.state == GameState.OVER) {
+			
+		}	
 	}
 	
 	public float lerp(float t, float a, float b) {
@@ -213,33 +223,56 @@ public class SpaceWars implements GLEventListener, MouseListener, MouseMotionLis
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyChar() == 'w') {
-			player1.vy = (float) Math.cos(Math.toRadians(-player1.angle)) * 2;
-			player1.vx = (float) Math.sin(Math.toRadians(-player1.angle)) * 2;
+			player1.speed = 2;
 		} else if (e.getKeyChar() == 'd') {
 			player1.va = -2f;
 		}else if (e.getKeyChar() == 'a') {
 			player1.va = 2f;
+		}
+		
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			player2.speed = 2;
+		} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			player2.va = -2f;
+		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			player2.va = 2f;
+		}
+		
+		if (e.getKeyChar() == 's') {
+			if (player1.bullets.size() < 3) {
+				player1.bullets.add(new Bullet(player1, player2));
+			}
+		}
+		
+		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+			if (player2.bullets.size() < 3) {
+				player2.bullets.add(new Bullet(player2, player1));
+			}
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		if (e.getKeyChar() == 'w') {
-			player1.vy = 0;
-			player1.vx = 0;
+			player1.speed = 0;
 		} else if (e.getKeyChar() == 'd') {
 			player1.va = 0;
 		} else if (e.getKeyChar() == 'a') {
 			player1.va = 0;
 		}
+		
+		if (e.getKeyCode() == KeyEvent.VK_UP) {
+			player2.speed = 0;
+		} else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+			player2.va = 0;
+		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+			player2.va = 0;
+		}
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-	// TODO Auto-generated method stub
-		if (e.getKeyChar() == 's') {
-			handler.add(new Bullet(player1));
-		}
+		// TODO Auto-generated method stub
 	}
 
 }
